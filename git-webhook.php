@@ -17,7 +17,7 @@ if (empty($requestBody)) { //判断数据是不是空
 	die('send fail');
 }
 $content = json_decode($requestBody, true); //数据转换
-if (!$content) $content = parse_url($content);
+if (!$content) $content = parse_url(urldecode($content));
 file_put_contents(LOG_DIR . "git-content.log", json_encode($content, JSON_UNESCAPED_UNICODE), FILE_APPEND);
 
 //若是主分支且提交数大于0
