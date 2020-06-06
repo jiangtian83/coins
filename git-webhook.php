@@ -17,8 +17,8 @@ if (empty($requestBody)) { //判断数据是不是空
 }
 $content = json_decode($requestBody, true); //数据转换
 //若是主分支且提交数大于0
-file_put_contents(LOG_DIR . "git-webhook.log", "****写入日志****" . PHP_EOL, FILE_APPEND);
 if ($content['ref'] == 'refs/heads/master') {
+	file_put_contents(LOG_DIR . "git-webhook.log", "****写入日志****" . PHP_EOL, FILE_APPEND);
 	//PHP函数执行git命令
 	chdir("/home/wwwroot/tmp/coins");
 	$res = shell_exec('git reset --hard origin/master && git clean -f
