@@ -37,6 +37,7 @@ const URL_COMPAT        =   3;  // 兼容模式
 // 类文件后缀
 const EXT               =   '.class.php'; 
 
+dump($_SERVER);
 // 系统常量定义
 defined('THINK_PATH')   or define('THINK_PATH',     __DIR__.'/');
 defined('APP_PATH')     or define('APP_PATH',       dirname($_SERVER['SCRIPT_FILENAME']).'/');
