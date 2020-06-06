@@ -11,16 +11,13 @@
 error_reporting(E_ALL);
 //git webhook 自动部署脚本
 $requestBody = file_get_contents("php://input"); //该方法可以接收post传过来的json字符串
-//fastcgi_finish_request();
 defined("LOG_DIR") or define("LOG_DIR", "./App/Runtime/Logs/Git/");
-//file_put_contents(LOG_DIR . "git-request-body.log",  $requestBody, FILE_APPEND);
 if (empty($requestBody)) { //判断数据是不是空
 	die('send fail');
 }
 $content = json_decode($requestBody, true); //数据转换
 if (!$content) parse_str(urldecode($requestBody), $content);
 $content = json_decode($content['payload'], true);
-//file_put_contents(LOG_DIR . "git-content.log", $content, FILE_APPEND);
 
 //若是主分支且提交数大于0
 if ($content['ref'] == 'refs/heads/master') {
