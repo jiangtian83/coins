@@ -12,7 +12,7 @@ ini_set('display_errors', 'On');
 error_reporting(E_ALL);
 //git webhook 自动部署脚本
 $requestBody = file_get_contents("php://input"); //该方法可以接收post传过来的json字符串
-defined("LOG_DIR") or define("LOG_DIR", "./App/Runtime/Logs/Git/");
+defined("LOG_DIR") or define("LOG_DIR", "/home/wwwroot/coins/App/Runtime/Logs/Git/");
 defined("SRC_DIR") or define("SRC_DIR", "/tmp/coins");
 defined("DES_DIR") or define("DES_DIR", "/home/wwwroot/coins");
 /**if (empty($requestBody)) { //判断数据是不是空
