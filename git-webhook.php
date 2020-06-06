@@ -26,7 +26,7 @@ if ($content['ref'] == 'refs/heads/master') {
 	file_copy($file, $newFile);
 	
 	$res_log = '-------------------------' . PHP_EOL;
-	$res_log.= '在' . date('Y-m-d H:i:s') . '向' . $content['repository']['name']
+	$res_log.= ' 在' . date('Y-m-d H:i:s') . '向' . $content['repository']['name']
 		. '项目的' . $content['ref'] . '分支push' . $res;
 	//将每次拉取信息追加写入到日志里
 	file_put_contents("git-webhook.txt", $res_log, FILE_APPEND);
