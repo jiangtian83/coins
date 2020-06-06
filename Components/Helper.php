@@ -9,7 +9,7 @@
  */
 
 if (!function_exists("put")) {
-	function put ($file, $data, $mod)
+	function put ($file, $data, $mod = FILE_APPEND)
 	{
 		if (is_array($data) || is_object($data)) $data = json_encode($data, JSON_UNESCAPED_UNICODE);
 		if (strpos($file, "../") === 0) $file = str_replace("../", dirname(getcwd()) . "/", $file);
