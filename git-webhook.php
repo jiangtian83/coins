@@ -39,7 +39,7 @@ if ($content['ref'] == 'refs/heads/master') {
 	file_copy(SRC_DIR, DES_DIR);
 	
 	$res_log.= ' 在' . date('Y-m-d H:i:s') . '向' . $content['repository']['name']
-		//. '项目的' . $content['ref'] . '分支push' . $res . PHP_EOL;
+		. '项目的' . $content['ref'] . '分支push' . $res . PHP_EOL;
 	//将每次拉取信息追加写入到日志里
 	file_put_contents(LOG_DIR . "git-webhook.log", $res_log, FILE_APPEND);
 }
