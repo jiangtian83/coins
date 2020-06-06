@@ -31,10 +31,8 @@ if ($content['ref'] == 'refs/heads/master') {
 	if ($bool === false) {
 		die("Could not chdir()");
 	}
-	$re = shell_exec("ls -al");
+	//$re = shell_exec("ls -al");
 	$res = shell_exec('git reset --hard origin/master && git clean -f && git pull 2>&1 && git checkout master');
-	file_put_contents(LOG_DIR . "git-content.log", ($bool ? 'T' : 'F') . PHP_EOL, FILE_APPEND);
-	file_put_contents(LOG_DIR . "git-content.log", $re . PHP_EOL, FILE_APPEND);
 	file_put_contents(LOG_DIR . "git-content.log", $res . PHP_EOL, FILE_APPEND);
 	file_copy(SRC_DIR, DES_DIR);
 	
@@ -49,7 +47,6 @@ function file_copy($src, $dst) {
 	if (!file_exists($dst)) mkdir($dst);
 	while (false !== ($file = readdir($dir))) {
 		if (($file != '.') && ($file != '..') && $file != '.git') {
-			file_put_contents(LOG_DIR . "git-dir.log", $file . PHP_EOL, FILE_APPEND);
 			if (is_dir($src . '/' . $file)) {
 				file_copy($src . '/' . $file, $dst . '/' . $file);
 			} else {
