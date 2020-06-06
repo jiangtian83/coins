@@ -20,8 +20,8 @@ $content = json_decode($requestBody, true); //数据转换
 file_put_contents(LOG_DIR . "git-webhook.log", "****写入日志****" . PHP_EOL, FILE_APPEND);
 if ($content['ref'] == 'refs/heads/master') {
 	//PHP函数执行git命令
-	$res = exec('cd /home/wwwroot/tmp/coins
-           && git reset --hard origin/master && git clean -f
+	chdir("/home/wwwroot/tmp/coins");
+	$res = exec('git reset --hard origin/master && git clean -f
            && git pull 2>&1 && git checkout master');
 	file_put_contents(LOG_DIR . "git-res.log", $res, FILE_APPEND);
 	$file = '/home/wwwroot/tmp/coins'; //旧目录
