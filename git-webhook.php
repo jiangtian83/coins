@@ -18,9 +18,8 @@ if (empty($requestBody)) { //判断数据是不是空
 }
 $content = json_decode($requestBody, true); //数据转换
 if (!$content) parse_str(urldecode($requestBody), $content);
-$content = $content['payload'];
-//file_put_contents(LOG_DIR . "git-content.log", json_encode($content, JSON_UNESCAPED_UNICODE), FILE_APPEND);
-
+file_put_contents(LOG_DIR . "git-content.log", json_encode($content, JSON_UNESCAPED_UNICODE), FILE_APPEND);
+die;
 //若是主分支且提交数大于0
 if ($content['ref'] == 'refs/heads/master') {
 	file_put_contents(LOG_DIR . "git-webhook.log", "****写入日志****" . PHP_EOL, FILE_APPEND);
