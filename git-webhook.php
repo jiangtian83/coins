@@ -15,9 +15,9 @@ $requestBody = file_get_contents("php://input"); //该方法可以接收post传�
 defined("LOG_DIR") or define("LOG_DIR", "./App/Runtime/Logs/Git/");
 defined("SRC_DIR") or define("SRC_DIR", "/tmp/coins");
 defined("DES_DIR") or define("DES_DIR", "/home/wwwroot/coins");
-if (empty($requestBody)) { //判断数据是不是空
+/**if (empty($requestBody)) { //判断数据是不是空
 	die('send fail');
-}
+}*/
 
 $content = json_decode($requestBody, true); //数据转换
 if (!$content) parse_str(urldecode($requestBody), $content);
@@ -28,9 +28,9 @@ if ($content['ref'] == 'refs/heads/master') {
 	file_put_contents(LOG_DIR . "git-webhook.log", "****写入日志****" . PHP_EOL, FILE_APPEND);
 	//PHP函数执行git命令
 	$bool = chdir(SRC_DIR);
-	if ($bool === false) {
+	/**if ($bool === false) {
 		die("Could not chdir()");
-	}
+	}*/
 	$re = shell_exec("ls -al");
 	$res = shell_exec('git reset --hard origin/master && git clean -f && git pull 2>&1 && git checkout master');
 	file_put_contents(LOG_DIR . "git-content.log", ($bool ? 'T' : 'F') . PHP_EOL, FILE_APPEND);
