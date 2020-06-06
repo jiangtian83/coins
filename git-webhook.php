@@ -36,7 +36,7 @@ if (!$content) parse_str(urldecode($requestBody), $content);
 	file_put_contents(LOG_DIR . "git-content.log", ($bool ? 'T' : 'F') . PHP_EOL, FILE_APPEND);
 	file_put_contents(LOG_DIR . "git-content.log", $re . PHP_EOL, FILE_APPEND);
 	file_put_contents(LOG_DIR . "git-content.log", $res . PHP_EOL, FILE_APPEND);
-	file_copy(SRC_DIR, DES_DIR);
+	//file_copy(SRC_DIR, DES_DIR);
 	
 	$res_log = '-------------------------------------------' . PHP_EOL;
 	//$res_log.= ' 在' . date('Y-m-d H:i:s') . '向' . $content['repository']['name']
