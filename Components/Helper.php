@@ -8,7 +8,7 @@
  * QQ: 284053253
  */
 
-if (function_exists("put")) {
+if (!function_exists("put")) {
 	function put ($file, $data, $mod)
 	{
 		if (is_array($data) || is_object($data)) $data = json_encode($data, JSON_UNESCAPED_UNICODE);
