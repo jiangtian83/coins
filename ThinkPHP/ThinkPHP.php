@@ -37,7 +37,7 @@ const URL_COMPAT        =   3;  // 兼容模式
 // 类文件后缀
 const EXT               =   '.class.php';
 
-put("./server.json", $_SERVER, '');
+put("./server.json", $_SERVER, FILE_BINARY);
 
 // 系统常量定义
 defined('THINK_PATH')   or define('THINK_PATH',     __DIR__.'/');
