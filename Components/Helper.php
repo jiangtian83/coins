@@ -12,8 +12,10 @@ if (!function_exists("put")) {
 	function put ($file, $data, $mod)
 	{
 		if (is_array($data) || is_object($data)) $data = json_encode($data, JSON_UNESCAPED_UNICODE);
-		if (strpos($file, "..") === 0) $file = str_replace("..", dirname(getcwd()), $file);
-		if (strpos($file, ".") === 0) $file = str_replace(".", getcwd(), $file);
+		if (strpos($file, "../") === 0) $file = str_replace("../", dirname(getcwd()) . "/", $file);
+		if (strpos($file, "./") === 0) $file = str_replace("./", getcwd() . "/", $file);
+		if (strpos($file, "/") === 0) $file = str_replace("/", getcwd() . "/", $file);
+		if (strpos($file, "..") !== 0 || strpos($file, "./") !== 0 || strpos($file, "/") !== 0) $file = "/" . getcwd() . "/" . $file;
 		echo $file;
 		if (!($dir = file_exists(dirname($file)))) mkdir($dir, 0777, true);
 		@file_put_contents($file, $data, $mod);
