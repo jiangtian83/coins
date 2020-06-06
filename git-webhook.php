@@ -33,6 +33,8 @@ if ($content['ref'] == 'refs/heads/master') {
 	}
 	//$re = shell_exec("ls -al");
 	$res = shell_exec('chmod -R 777 .;chown -R www:www .;git reset --hard origin/master && git clean -f && git pull 2>&1 && git checkout master;chmod -R 644 .;chown -R www:www .');
+	$dir = getcwd();
+	file_put_contents(LOG_DIR . "git-content.log", "当前目录：{$dir}" . PHP_EOL, FILE_APPEND);
 	file_put_contents(LOG_DIR . "git-content.log", $res . PHP_EOL, FILE_APPEND);
 	file_copy(SRC_DIR, DES_DIR);
 	
