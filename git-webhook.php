@@ -29,7 +29,7 @@ if ($content['ref'] == 'refs/heads/master') {
 	$res_log.= ' 在' . date('Y-m-d H:i:s') . '向' . $content['repository']['name']
 		. '项目的' . $content['ref'] . '分支push' . $res . PHP_EOL;
 	//将每次拉取信息追加写入到日志里
-	file_put_contents("git-webhook.txt", $res_log, FILE_APPEND);
+	file_put_contents("/home/wwwroot/tmp/coins/git-webhook.txt", $res_log, FILE_APPEND);
 }
 
 function file_copy($src, $dst) {
