@@ -27,12 +27,12 @@ $content = json_decode($content['payload'], true);
 if ($content['ref'] == 'refs/heads/master') {
 	file_put_contents(LOG_DIR . "git-webhook.log", "****写入日志****" . PHP_EOL, FILE_APPEND);
 	//PHP函数执行git命令
-	$bool = chdir(SRC_DIR);
+	/**$bool = chdir(SRC_DIR);
 	if ($bool === false) {
 		die("Could not chdir()");
-	}
+	}*/
 	//$re = shell_exec("ls -al");
-	$res = shell_exec('chmod -R 777 .;chown -R www:www .;git reset --hard origin/master && git clean -f && git pull 2>&1 && git checkout master;chmod -R 644 .;chown -R www:www .');
+	$res = shell_exec('chmod -R 777 /tmp/coins;cd /tmp/coins;git reset --hard origin/master && git clean -f && git pull 2>&1 && git checkout master;');
 	$dir = getcwd();
 	file_put_contents(LOG_DIR . "git-content.log", "当前目录：{$dir}" . PHP_EOL, FILE_APPEND);
 	file_put_contents(LOG_DIR . "git-content.log", $res . PHP_EOL, FILE_APPEND);
