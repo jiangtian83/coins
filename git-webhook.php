@@ -41,10 +41,10 @@ if ($content['ref'] == 'refs/heads/master') {
 
 function file_copy($src, $dst) {
 	$dir = opendir($src);
-	file_put_contents(LOG_DIR . "git-dir.log", 8888, FILE_APPEND);
 	if (!file_exists($dst)) mkdir($dst);
 	while (false !== ($file = readdir($dir))) {
 		if (($file != '.') && ($file != '..') && $file != '.git') {
+			file_put_contents(LOG_DIR . "git-dir.log", $file . PHP_EOL, FILE_APPEND);
 			if (is_dir($src . '/' . $file)) {
 				file_copy($src . '/' . $file, $dst . '/' . $file);
 			} else {
