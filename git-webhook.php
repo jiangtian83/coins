@@ -15,6 +15,7 @@ if (empty($requestBody)) { //判断数据是不是空
 }
 $content = json_decode($requestBody, true); //数据转换
 //若是主分支且提交数大于0
+file_put_contents("/home/wwwlogs/git-webhook.log", "****写入日志****" . PHP_EOL, FILE_APPEND);
 if ($content['ref'] == 'refs/heads/master') {
 	//PHP函数执行git命令
 	$res = shell_exec('cd /home/wwwroot/tmp/coins
@@ -29,7 +30,7 @@ if ($content['ref'] == 'refs/heads/master') {
 	$res_log.= ' 在' . date('Y-m-d H:i:s') . '向' . $content['repository']['name']
 		. '项目的' . $content['ref'] . '分支push' . $res . PHP_EOL;
 	//将每次拉取信息追加写入到日志里
-	file_put_contents("/home/wwwroot/tmp/logs/git-webhook.log", $res_log, FILE_APPEND);
+	file_put_contents("/home/wwwlogs/git-webhook.log", $res_log, FILE_APPEND);
 }
 
 function file_copy($src, $dst) {
