@@ -8,6 +8,7 @@
  * QQ: 284053253
  */
 
+error_reporting(E_ALL);
 //git webhook 自动部署脚本
 $requestBody = file_get_contents("php://input"); //该方法可以接收post传过来的json字符串
 //fastcgi_finish_request();
