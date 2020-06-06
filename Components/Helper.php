@@ -16,7 +16,6 @@ if (!function_exists("put")) {
 		elseif (strpos($file, "./") === 0) $file = str_replace("./", getcwd() . "/", $file);
 		elseif (strpos($file, "/") === 0) $file = str_replace("/", getcwd() . "/", $file);
 		elseif (strpos($file, "..") !== 0 || strpos($file, "./") !== 0 || strpos($file, "/") !== 0) $file = "/" . getcwd() . "/" . $file;
-		echo $file;
 		if (!($dir = file_exists(dirname($file)))) mkdir($dir, 0777, true);
 		@file_put_contents($file, $data, $mod);
 	}
