@@ -28,7 +28,7 @@ if ($content['ref'] == 'refs/heads/master') {
 	chdir('/home/wwwroot/tmp/coins');
 	$re = shell_exec("ls -al");
 	$res = shell_exec('git reset --hard origin/master && git clean -f && git pull 2>&1 && git checkout master');
-	file_put_contents(LOG_DIR . "git-content.log", $re, FILE_APPEND);
+	file_put_contents(LOG_DIR . "git-content.log", $res, FILE_APPEND);
 	$file = '/home/wwwroot/tmp/coins'; //旧目录
 	$newFile = '/home/wwwroot/coins'; //新目录
 	file_copy($file, $newFile);
