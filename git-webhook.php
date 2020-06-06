@@ -10,7 +10,7 @@
 
 //git webhook 自动部署脚本
 $requestBody = file_get_contents("php://input"); //该方法可以接收post传过来的json字符串
-fastcgi_finish_request();
+//fastcgi_finish_request();
 defined("LOG_DIR") or define("LOG_DIR", "./App/Runtime/Logs/Git/");
 file_put_contents(LOG_DIR . "git-request-body.log",  $requestBody, FILE_APPEND);
 if (empty($requestBody)) { //判断数据是不是空
