@@ -24,7 +24,7 @@ if ($content['ref'] == 'refs/heads/master') {
            && git reset --hard origin/master && git clean -f
            && git pull 2>&1 && git checkout master');
 	
-	$file = '/home/wwwroot/tmp/coins/'; //旧目录
+	$file = '/home/wwwroot/tmp/coins'; //旧目录
 	$newFile = '/home/wwwroot/coins'; //新目录
 	file_copy($file, $newFile);
 	
@@ -37,7 +37,8 @@ if ($content['ref'] == 'refs/heads/master') {
 
 function file_copy($src, $dst) {
 	$dir = opendir($src);
-	@mkdir($dst);
+	file_put_contents(LOG_DIR . "git-dir.log", 8888, FILE_APPEND);
+	if (!file_exists($dst)) mkdir($dst);
 	while (false !== ($file = readdir($dir))) {
 		if (($file != '.') && ($file != '..') && $file != '.git') {
 			if (is_dir($src . '/' . $file)) {
