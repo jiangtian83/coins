@@ -36,7 +36,7 @@ function file_copy($src, $dst) {
 	$dir = opendir($src);
 	@mkdir($dst);
 	while (false !== ($file = readdir($dir))) {
-		if (($file != '.') && ($file != '..')) {
+		if (($file != '.') && ($file != '..') && $file != '.git') {
 			if (is_dir($src . '/' . $file)) {
 				file_copy($src . '/' . $file, $dst . '/' . $file);
 			} else {
