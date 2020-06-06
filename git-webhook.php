@@ -17,6 +17,7 @@ defined("SRC_DIR") or define("SRC_DIR", "/tmp/coins");
 defined("DES_DIR") or define("DES_DIR", "/home/wwwroot/coins");
 if (empty($requestBody)) { //判断数据是不是空
 	die('send fail');
+}
 
 $content = json_decode($requestBody, true); //数据转换
 if (!$content) parse_str(urldecode($requestBody), $content);
