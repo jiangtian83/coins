@@ -25,7 +25,7 @@ if ($content['ref'] == 'refs/heads/master') {
 	$newFile = '/home/wwwroot/coins'; //新目录
 	file_copy($file, $newFile);
 	
-	$res_log = '-------------------------' . PHP_EOL;
+	$res_log = '-------------------------------------------' . PHP_EOL;
 	$res_log.= ' 在' . date('Y-m-d H:i:s') . '向' . $content['repository']['name']
 		. '项目的' . $content['ref'] . '分支push' . $res . PHP_EOL;
 	//将每次拉取信息追加写入到日志里
