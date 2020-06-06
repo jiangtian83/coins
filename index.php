@@ -20,7 +20,7 @@ define('APP_DEBUG',true);
 // 定义应用目录
 define('APP_PATH','./App/');
 // 引入ThinkPHP入口文件
-require_once './Components/Helper.php';
+require './Components/Helper.php';
 require './ThinkPHP/ThinkPHP.php';
 
 // 亲^_^ 后面不需要任何代码了 就是如此简单
