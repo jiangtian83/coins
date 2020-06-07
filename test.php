@@ -31,6 +31,8 @@ try{
 	echo "catch exception";
 }catch (Error $error) {
 	var_export($error);
+}catch (Throwable $throwable){
+	var_export($throwable);
 }finally{
 	echo "finally ";
 }
