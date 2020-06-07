@@ -37,7 +37,7 @@ class Think {
       // 初始化文件存储方式
       Storage::connect(STORAGE_TYPE);
 
-      $runtimefile  = RUNTIME_PATH.APP_MODE.'~runtime.php';
+      $runtimefile  = RUNTIME_PATH.APP_MODE.'~runtime.php'
       if(!APP_DEBUG && Storage::has($runtimefile)){
           Storage::load($runtimefile);
       }else{
@@ -262,7 +262,7 @@ class Think {
     
     // 致命错误捕获
     static public function fatalError() {
-        Log::save();die;
+        Log::save();
         if ($e = error_get_last()) {
             switch($e['type']){
               case E_ERROR:
@@ -271,7 +271,6 @@ class Think {
               case E_COMPILE_ERROR:
               case E_USER_ERROR:  
                 ob_end_clean();
-                echo 888;
                 self::halt($e);
                 break;
             }
