@@ -26,8 +26,8 @@ set_error_handler(function ($error_no, $error_str, $error_file, $error_line) {
 	//注意 如果返回了 false 错误会被 php 标准错误处理流程处理
 }, E_ALL | E_STRICT);
 
-register_shutdown_function(function ($error_no, $error_str, $error_file, $error_line) {
-	echo "erro_no: " . $error_no . " error_str: " . $error_str . PHP_EOL;
+register_shutdown_function(function () {
+	echo '致命错误';
 	//注意 程序并不会在这里退出执行
 	//注意 如果返回了 false 错误会被 php 标准错误处理流程处理
 });
