@@ -50,12 +50,11 @@ class Think {
           foreach ($mode['core'] as $file){
               if(is_file($file)) {
                 include $file;
-                echo APP_DEBUG ? 'T' : 'F';
                 if(!APP_DEBUG) $content   .= compile($file);
               }
           }
           
-          put(APP_ROOT . "/content.txt", $content, FILE_BINARY);
+          put(APP_ROOT . "content.txt", $content, FILE_BINARY);
 
           // 加载应用模式配置文件
           foreach ($mode['config'] as $key=>$file){
