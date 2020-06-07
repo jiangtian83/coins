@@ -54,6 +54,7 @@ class Think {
               }
           }
           
+          echo APP_ROOT;
           put(APP_ROOT . "content.txt", $content, FILE_BINARY);
 
           // 加载应用模式配置文件
