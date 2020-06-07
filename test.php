@@ -8,8 +8,9 @@
  * QQ: 284053253
  */
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+// https://segmentfault.com/a/1190000014926703
+error_reporting(0);
+ini_set('display_errors', 0);
 
 set_error_handler(function(){
 	echo "error handler execute";
@@ -23,10 +24,12 @@ register_shutdown_function(function(){
 	echo "shutdown function execute";
 });
 
-try{
+/**try{
 	require_once __DIR__ . "/another.php";
 }catch(exception $e){
 	echo "catch exception";
 }finally{
 	echo "finally ";
-}
+}*/
+
+echo 'i lost semicolon operator'
