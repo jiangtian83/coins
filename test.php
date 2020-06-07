@@ -27,9 +27,9 @@ set_exception_handler(function(){
 ### 1)
 try{
 	require_once __DIR__ . "/another.php";
-}catch(Exception $e){
+}catch(\Exception $e){
 	echo "catch exception";
-}catch (Error $error) {
+}catch (\Error $error) {
 	var_export($error);
 }catch (Throwable $throwable){
 	var_export($throwable);
