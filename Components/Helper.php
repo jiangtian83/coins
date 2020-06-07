@@ -21,6 +21,10 @@ if (!function_exists("put")) {
 	}
 }
 
-function __autoload ($class) {
-	die($class . '未定义');
+if (!function_exists("__autoload")) {
+	echo 8;
+	function __autoload($class)
+	{
+		die($class . '未定义');
+	}
 }
