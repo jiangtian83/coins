@@ -24,6 +24,7 @@ register_shutdown_function(function(){
 	echo "shutdown function execute";
 });
 
+### 1)
 /**try{
 	require_once __DIR__ . "/another.php";
 }catch(exception $e){
@@ -32,4 +33,5 @@ register_shutdown_function(function(){
 	echo "finally ";
 }*/
 
+### 2)
 echo 'i lost semicolon operator'
