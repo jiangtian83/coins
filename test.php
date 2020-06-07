@@ -24,7 +24,7 @@ register_shutdown_function(function(){
 });
 
 try{
-	0$a;
+	require_once __DIR__ . "/another.php";
 }catch(exception $e){
 	echo "catch exception";
 }finally{
