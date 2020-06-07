@@ -9,4 +9,5 @@
  */
 
 include __DIR__ . "/__autoload.php";
-new Test\Linux();
+$linux = new Test\Linux();
+$linux->class_output();

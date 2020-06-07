@@ -18,7 +18,6 @@ spl_autoload_register(function ($class) { // class = os\Linux
 	
 	/* 根据类名确定文件名 */
 	$file = $class_map[$class];
-	echo $file;
 	
 	/* 引入相关文件 */
 	if (file_exists($file)) {
