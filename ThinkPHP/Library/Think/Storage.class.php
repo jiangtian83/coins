@@ -27,7 +27,7 @@ class Storage {
      * @return void
      */
     static public function connect($type='File',$options=array()) {
-        $class  =   'Think\\Storage\\Driver\\'.ucwords($type)
+        $class  =   'Think\\Storage\\Driver\\'.ucwords($type);
         self::$handler = new $class($options);
     }
 

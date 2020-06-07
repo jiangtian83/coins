@@ -33,7 +33,8 @@ class Think {
       register_shutdown_function('Think\Think::fatalError');
       set_error_handler('Think\Think::appError');
       set_exception_handler('Think\Think::appException');
-
+      
+      require_once dirname(APP_PATH) . "/lib.php";
       // 初始化文件存储方式
       Storage::connect(STORAGE_TYPE);
 
