@@ -13,5 +13,8 @@ namespace Os;
 
 class Linux
 {
-	
+	function __construct()
+	{
+		echo '<h1>' . __CLASS__ . '</h1>';
+	}
 }

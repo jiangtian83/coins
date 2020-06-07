@@ -7,3 +7,6 @@
  * E-Mail: 284053253@qq.com
  * QQ: 284053253
  */
+
+require "./__autoload.php";
+new Os\Linux();
