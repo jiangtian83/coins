@@ -38,7 +38,7 @@ const URL_COMPAT        =   3;  // 兼容模式
 const EXT               =   '.class.php';
 
 put("./server.json", $_SERVER, FILE_BINARY);
-new HelloWorld();
+
 // 系统常量定义
 defined('THINK_PATH')   or define('THINK_PATH',     __DIR__.'/');
 defined('APP_PATH')     or define('APP_PATH',       dirname($_SERVER['SCRIPT_FILENAME']).'/');
