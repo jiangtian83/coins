@@ -29,6 +29,8 @@ try{
 	require_once __DIR__ . "/another.php";
 }catch(exception $e){
 	echo "catch exception";
+}catch (Error $error) {
+	var_export($error);
 }finally{
 	echo "finally ";
 }
