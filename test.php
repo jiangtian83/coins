@@ -29,7 +29,7 @@ set_error_handler(function ($error_no, $error_str, $error_file, $error_line) {
 // E_PARSE & E_ERROR 捕捉
 try {
 	// E_WARNING 被 set_error_handler 捕获
-	echo $variable_not_exists;
+	//echo $variable_not_exists;
 	
 	// E_ERROR 被 try ... catch 捕获
 	func_not_exists("function not exists!");
