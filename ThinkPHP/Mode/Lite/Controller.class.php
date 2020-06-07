@@ -23,7 +23,7 @@ abstract class Controller {
 
     /**
      * 控制器参数
-     * @var config
+     * @var array config
      * @access protected
      */      
     protected $config   =   array();

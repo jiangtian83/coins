@@ -15,14 +15,14 @@ namespace Think;
 class View {
     /**
      * 模板输出变量
-     * @var tVar
+     * @var array tVar
      * @access protected
      */ 
     protected $tVar     =   array();
 
     /**
      * 模板主题
-     * @var theme
+     * @var string theme
      * @access protected
      */ 
     protected $theme    =   '';
@@ -210,6 +210,7 @@ class View {
             /* 获取模板主题名称 */
             $theme =  C('DEFAULT_THEME');
             if(C('TMPL_DETECT_THEME')) {// 自动侦测模板主题
+	            echo 8888;
                 $t = C('VAR_TEMPLATE');
                 if (isset($_GET[$t])){
                     $theme = $_GET[$t];
