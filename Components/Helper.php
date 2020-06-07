@@ -22,5 +22,5 @@ if (!function_exists("put")) {
 }
 
 function __autoload ($class) {
-	echo $class . '未定义';
+	die($class . '未定义');
 }
