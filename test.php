@@ -37,8 +37,8 @@ try {
 	// E_WARNING 被 set_error_handler 捕获
 	//echo $variable_not_exists;
 	
-	// E_ERROR 被 try ... catch 捕获
-	func_not_exists("function not exists!");
+	// E_ERROR 被 try ... catch／register_shutdown_function 捕获
+	//func_not_exists("function not exists!");
 	
 	// E_PARSE 被 try ... catch 捕获 lib.php 中有语法错误
 	require_once __DIR__ . '/lib.php';
