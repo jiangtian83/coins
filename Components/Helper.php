@@ -22,7 +22,6 @@ if (!function_exists("put")) {
 }
 
 if (!function_exists("__autoload")) {
-	echo 8;
 	function __autoload($class)
 	{
 		die($class . '未定义');

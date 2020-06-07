@@ -8,7 +8,7 @@
  * QQ: 284053253
  */
 
-namespace Os;
+namespace Test;
 
 
 class Linux

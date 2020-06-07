@@ -8,5 +8,5 @@
  * QQ: 284053253
  */
 
-require "./__autoload.php";
-new Os\Linux();
+require __DIR__ . "/__autoload.php";
+new Test\Linux();
