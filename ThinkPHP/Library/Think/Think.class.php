@@ -262,7 +262,7 @@ class Think {
     
     // 致命错误捕获
     static public function fatalError() {
-        Log::save();
+        Log::save();echo 9999;
         if ($e = error_get_last()) {
             switch($e['type']){
               case E_ERROR:
