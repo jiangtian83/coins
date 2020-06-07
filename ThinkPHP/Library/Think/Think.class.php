@@ -214,7 +214,7 @@ class Think {
      * @param mixed $e 异常对象
      */
     static public function appException($e) {
-        $error = array();echo 7777;
+        $error = array();
         $error['message']   =   $e->getMessage();
         $trace              =   $e->getTrace();
         if('E'==$trace[0]['function']) {
@@ -242,7 +242,6 @@ class Think {
      * @return void
      */
     static public function appError($errno, $errstr, $errfile, $errline) {
-    	echo 888;
       switch ($errno) {
           case E_ERROR:
           case E_PARSE:
@@ -263,7 +262,6 @@ class Think {
     
     // 致命错误捕获
     static public function fatalError() {
-        Log::save();echo 9999;
         if ($e = error_get_last()) {
             switch($e['type']){
               case E_ERROR:
