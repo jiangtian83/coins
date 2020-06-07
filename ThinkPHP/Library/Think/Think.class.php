@@ -255,7 +255,7 @@ class Think {
             break;
           default:
             $errorStr = "[$errno] $errstr ".$errfile." 第 $errline 行.";
-            self::trace($errorStr,'','NOTIC');
+            self::trace($errorStr,'','NOTICE');
             break;
       }
     }
