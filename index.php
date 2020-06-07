@@ -21,6 +21,7 @@ define('APP_DEBUG',false);
 define('APP_PATH','./App/');
 // 引入ThinkPHP入口文件
 require './Components/Helper.php';
+echo 9;
 require './ThinkPHP/ThinkPHP.php';
 
 // 亲^_^ 后面不需要任何代码了 就是如此简单
