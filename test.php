@@ -25,13 +25,13 @@ register_shutdown_function(function(){
 });
 
 ### 1)
-/**try{
+try{
 	require_once __DIR__ . "/another.php";
 }catch(exception $e){
 	echo "catch exception";
 }finally{
 	echo "finally ";
-}*/
+}
 
 ### 2)
-echo 'i lost semicolon operator'
+//echo 'i lost semicolon operator'
