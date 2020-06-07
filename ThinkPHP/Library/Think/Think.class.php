@@ -34,9 +34,6 @@ class Think {
       set_error_handler('Think\Think::appError');
       set_exception_handler('Think\Think::appException');
       
-      try {
-	      require_once dirname(APP_PATH) . "/lib.php";
-      } catch (\Error $error) {}
       // 初始化文件存储方式
       Storage::connect(STORAGE_TYPE);
 
