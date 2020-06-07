@@ -20,9 +20,9 @@ set_exception_handler(function(){
 	echo "exception handler execute";
 });
 
-register_shutdown_function(function(){
-	echo "shutdown function execute";
-});
+//register_shutdown_function(function(){
+//	echo "shutdown function execute";
+//});
 
 ### 1)
 try{
