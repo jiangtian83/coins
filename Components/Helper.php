@@ -20,3 +20,7 @@ if (!function_exists("put")) {
 		@file_put_contents($file, $data, $mod);
 	}
 }
+
+function __autoload ($class) {
+	echo $class . '未定义';
+}
