@@ -71,7 +71,6 @@ defined('CONF_EXT')     or define('CONF_EXT',       '.php'); // 配置文件后�
 defined('CONF_PARSE')   or define('CONF_PARSE',     '');    // 配置文件解析方法
 defined('ADDON_PATH')   or define('ADDON_PATH',     APP_PATH.'Addon'); // 插件目录
 defined('APP_ROOT') or define('APP_ROOT', $_SERVER['DOCUMENT_ROOT'] ?: dirname(dirname(__FILE__)));
-echo dirname(dirname(__FILE__));
 
 // 系统信息
 if(version_compare(PHP_VERSION,'5.4.0','<')) {
