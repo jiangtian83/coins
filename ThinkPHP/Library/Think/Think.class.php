@@ -50,6 +50,7 @@ class Think {
           foreach ($mode['core'] as $file){
               if(is_file($file)) {
                 include $file;
+                echo APP_DEBUG;
                 if(!APP_DEBUG) $content   .= compile($file);
               }
           }
