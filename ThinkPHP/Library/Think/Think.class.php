@@ -271,6 +271,7 @@ class Think {
               case E_COMPILE_ERROR:
               case E_USER_ERROR:  
                 ob_end_clean();
+                echo 888;
                 self::halt($e);
                 break;
             }
