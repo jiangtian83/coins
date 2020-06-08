@@ -210,7 +210,6 @@ class View {
             /* 获取模板主题名称 */
             $theme =  C('DEFAULT_THEME');
             if(C('TMPL_DETECT_THEME')) {// 自动侦测模板主题
-	            echo 8888;
                 $t = C('VAR_TEMPLATE');
                 if (isset($_GET[$t])){
                     $theme = $_GET[$t];
